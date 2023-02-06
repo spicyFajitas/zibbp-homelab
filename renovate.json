@@ -23,4 +23,24 @@
   "pre-commit": {
     "enabled": true
   },
+  "flux": {
+    "fileMatch": ["kubernetes/.+\\.ya?ml$"]
+  },
+  "helm-values": {
+    "fileMatch": ["kubernetes/.+\\.ya?ml$"]
+  },
+  "kubernetes": {
+    "fileMatch": ["ansible/.+\\.ya?ml.j2$", "kubernetes/.+\\.ya?ml$"]
+  },
+  "regexManagers": [
+    {
+      "description": "Process various other dependencies",
+      "fileMatch": ["ansible/.+\\.ya?ml$", "kubernetes/.+\\.ya?ml$"],
+      "matchStrings": [
+        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\n.*?\"(?<currentValue>.*)\"\n"
+      ],
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ]
 }
