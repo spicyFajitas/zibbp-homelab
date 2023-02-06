@@ -16,8 +16,3 @@ configMapGenerator:
   - name: radarr-config
     files:
       - radarr-config.yml
-
-images:
-  - name: radarr
-    newName: lscr.io/linuxserver/radarr
-    newTag: 4.2.4.6635-ls158
