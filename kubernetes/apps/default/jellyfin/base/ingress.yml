@@ -20,4 +20,4 @@ spec:
   tls:
     - hosts:
         - jellyfin.lab.zibbp.net
-      secretName: lab-zibbp-net-tls
+      secretName: jellyfin-lab-zibbp-net-tls
