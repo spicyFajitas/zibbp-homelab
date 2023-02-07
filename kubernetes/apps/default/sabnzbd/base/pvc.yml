@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sabnzbd-downloads-incomplete-pvc
+  name: sabnzbd-incomplete-downloads-pvc
   annotations: io.longhorn.auto-trim
 spec:
   accessModes:
