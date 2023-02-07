@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: sabnzbd
+
+commonLabels:
+  app: sabnzbd
+
+configMapGenerator:
+  - name: sabnzbd-config
+    files:
+      - config.yml
+
+bases:
+  - ./base
