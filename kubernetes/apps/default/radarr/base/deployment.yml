@@ -27,12 +27,11 @@ spec:
             - name: config
               mountPath: /config
             - name: movies-nfs
-              mountPath: /movies
+              mountPath: /movies-nfs
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: radarr-config-pvc
         - name: movies-nfs
-          nfs:
-            server: 197.100.1.230
-            path: /mnt/user/test-k3s/media/movies
+          persistentVolumeClaim:
+            claimName: movies-nfs-pvc
