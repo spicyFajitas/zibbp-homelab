@@ -34,4 +34,4 @@ spec:
             claimName: jellyfin-config-pvc
         - name: movies-nfs
           persistentVolumeClaim:
-            claimName: movies-nfs-pvc
+            claimName: jellyfin-movies-nfs-pv
