@@ -30,3 +30,7 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: radarr-config-pvc
+        - name: movies-nfs
+          nfs:
+            server: 197.100.1.230
+            path: /mnt/user/test-k3s/media/movies

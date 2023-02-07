@@ -1,18 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-metadata:
-  name: radarr
-
-commonLabels:
-  app: radarr
-
 resources:
   - deployment.yml
   - service.yml
   - ingress.yml
   - pvc.yml
-
-configMapGenerator:
-  - name: radarr-config
-    files:
-      - radarr-config.yml
