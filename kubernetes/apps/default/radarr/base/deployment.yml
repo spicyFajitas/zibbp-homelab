@@ -26,6 +26,8 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
+            - name: movies-nfs
+              mountPath: /movies
       volumes:
         - name: config
           persistentVolumeClaim:
