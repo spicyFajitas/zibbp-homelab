@@ -34,7 +34,7 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: sabnzbd-config-pvc
-        - name: downloads
+        - name: sabnzbd-downloads
           persistentVolumeClaim:
             claimName: sabnzbd-downloads-pvc
         - name: sabnzbd-incomplete-downloads
