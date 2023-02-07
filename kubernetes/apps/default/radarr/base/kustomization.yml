@@ -4,4 +4,5 @@ resources:
   - deployment.yml
   - service.yml
   - ingress.yml
+  - pv.yml
   - pvc.yml
