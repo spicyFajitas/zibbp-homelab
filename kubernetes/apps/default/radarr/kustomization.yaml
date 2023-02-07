@@ -9,7 +9,7 @@ commonLabels:
 configMapGenerator:
   - name: radarr-config
     files:
-      - radarr-config.yml
+      - config.yml
 
 bases:
   - ./base
