@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jellyfin-ingress
+  labels:
+    app: jellyfin-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: jellyfin.lab.zibbp.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jellyfin
+                port:
+                  number: 8096
+  tls:
+    - hosts:
+        - jellyfin.lab.zibbp.net
+      secretName: lab-zibbp-net-tls
