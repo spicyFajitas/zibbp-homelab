@@ -30,6 +30,8 @@ spec:
               mountPath: /downloads
             - name: sabnzbd-incomplete-downloads
               mountPath: /incomplete-downloads
+            - name: sabnzbd-test-downloads
+              mountPath: /test-downloads
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -40,3 +42,6 @@ spec:
         - name: sabnzbd-incomplete-downloads
           persistentVolumeClaim:
             claimName: sabnzbd-incomplete-downloads-pvc
+        - name: sabnzbd-test-downloads
+          persistentVolumeClaim:
+            claimName: sabnzbd-test-downloads-pvc
