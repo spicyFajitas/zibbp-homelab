@@ -15,11 +15,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: sabnzbd-downloads-pvc
-  annotations: io.longhorn.auto-trim
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: longhorn-tycho
+  storageClassName: local-path
   resources:
     requests:
       storage: 1Gi
