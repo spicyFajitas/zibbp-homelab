@@ -21,7 +21,7 @@ configMapGenerator:
   - name: ganymede-api-config
     literals:
       - TZ=America/Chicago
-      - DB_HOST=ganymede-db
+      - DB_HOST=ganymede-database
       - DB_PORT=5432
       - DB_USER=ganymede
       - DB_NAME=ganymede-prd
