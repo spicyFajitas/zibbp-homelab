@@ -28,6 +28,8 @@ spec:
               mountPath: /config
             - name: movies-nfs
               mountPath: /movies-nfs
+            - name: downloads
+              mountPath: /downloads
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -35,3 +37,6 @@ spec:
         - name: movies-nfs
           persistentVolumeClaim:
             claimName: movies-nfs-pvc
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: sabnzbd-downloads-pvc
