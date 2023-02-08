@@ -6,7 +6,10 @@ resources:
   - frontend-deployment.yml
   - nginx-deployment.yml
   - service.yml
-  - ingress.yml
+  - frontend-ingress.yml
+  - api-ingress.yml
+  - db-ingress.yml
+  - nginx-ingress.yml
   - pv.yml
   - pvc.yml
   - configmap.yml
