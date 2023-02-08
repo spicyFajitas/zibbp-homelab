@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ganymede-nginx
-  labels:
-    app: ganymede-nginx
+  name: ganymede-nginx-service
 spec:
   selector:
     app: ganymede-nginx
   ports:
-    - name: ganymede-nginx
+    - name: ganymede-nginx-http
       port: 8080
       targetPort: 8080
       protocol: TCP
+  type: ClusterIP

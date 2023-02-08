@@ -2,8 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ganymede-ingress
-  labels:
-    app: ganymede-ingress
 spec:
   ingressClassName: nginx
   rules:
@@ -14,7 +12,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ganymede
+                name: ganymede-frontend-service
                 port:
                   number: 3000
     - host: api-ganymede.lab.zibbp.net
@@ -24,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ganymede
+                name: ganymede-api-service
                 port:
                   number: 4000
     - host: cdn-ganymede.lab.zibbp.net
@@ -34,7 +32,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ganymede
+                name: ganymede-nginx-service
                 port:
                   number: 8080
   tls:

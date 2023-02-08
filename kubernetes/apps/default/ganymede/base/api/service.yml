@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ganymede-api
-  labels:
-    app: ganymede-api
+  name: ganymede-api-service
 spec:
   selector:
     app: ganymede-api
   ports:
-    - name: ganymede-api
+    - name: ganymede-api-http
       port: 4000
       targetPort: 4000
       protocol: TCP
+  type: ClusterIP

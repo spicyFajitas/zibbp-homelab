@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ganymede-database
-  labels:
-    app: ganymede-database
+  name: ganymede-database-service
 spec:
   selector:
     app: ganymede-database
   ports:
-    - name: ganymede-database
+    - name: ganymede-database-tcp
       port: 5432
       targetPort: 5432
       protocol: TCP
+  type: ClusterIP

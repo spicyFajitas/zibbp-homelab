@@ -4,19 +4,19 @@ resources:
   - pv.yml
   - pvc.yml
   - ingress.yml
-  - service.yml
+  # - service.yml
   - ./frontend/deployment.yml
-  # - ./frontend/service.yml
+  - ./frontend/service.yml
   # - ./frontend/ingress.yml
   - ./database/deployment.yml
-  # - ./database/service.yml
+  - ./database/service.yml
   # - ./database/ingress.yml
   - ./database/sealed-secret.yml
   - ./api/deployment.yml
-  # - ./api/service.yml
+  - ./api/service.yml
   # - ./api/ingress.yml
   - ./api/sealed-secret.yml
   - ./nginx/deployment.yml
-  # - ./nginx/service.yml
+  - ./nginx/service.yml
   # - ./nginx/ingress.yml
   - ./nginx/configmap.yml
