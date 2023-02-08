@@ -9,8 +9,8 @@ commonLabels:
 configMapGenerator:
   - name: ganymede-frontend-config
     literals:
-      - API_URL=https://api.ganymede.lab.zibbp.net
-      - CDN_URL=https://cdn.ganymede.lab.zibbp.net
+      - API_URL=https://api-ganymede.lab.zibbp.net
+      - CDN_URL=https://cdn-ganymede.lab.zibbp.net
       - SHOW_SSO_LOGIN_BUTTON=true
       - FORCE_SSO_AUTH=false
       - REQUIRE_LOGIN=false
