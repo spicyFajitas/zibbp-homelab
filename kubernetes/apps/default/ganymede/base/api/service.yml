@@ -1,11 +1,10 @@
-apiVersion: v1beta1
+apiVersion: v1
 kind: Service
 metadata:
   name: ganymede-api-service
 spec:
   selector:
-    matchFields:
-      - metadata.name: ganymede-api-deployment
+    deployment: ganymede-api
   ports:
     - name: ganymede-api-http
       port: 4000
