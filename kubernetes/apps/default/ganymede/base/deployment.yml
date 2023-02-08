@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ganymede
+  labels:
+    app: ganymede
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ganymede
+  template:
+    metadata:
+      labels:
+        app: ganymede
+    spec:
+      containers:
+        - name: ganymede-api
+          image: ghcr.io/zibbp/ganymede:v1.2.3
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ganymede-api-config
+            - secretRef:
+                name: ganymede-api-secret
+          ports:
+            - containerPort: 4000
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: logs
+              mountPath: /logs
+            - name: videos-nfs
+              mountPath: /vods
+        - name: ganymede-frontend
+          image: ghcr.io/zibbp/ganymede-frontend:v1.2.2
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ganymede-frontend-config
+          ports:
+            - containerPort: 3000
+        - name: ganymede-nginx
+          image: nginx:1.23.3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+            - name: videos-nfs
+              mountPath: /mnt/vods
+        - name: ganymde-db
+          image: postgres:15.1
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ganymede-db-config
+            - secretRef:
+                name: ganymede-db-secret
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: db-data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: ganymede-data-pvc
+        - name: logs
+          persistentVolumeClaim:
+            claimName: ganymede-logs-pvc
+        - name: videos-nfs
+          persistentVolumeClaim:
+            claimName: ganymede-videos-nfs-pv
+        - name: nginx-config
+          configMap:
+            name: ganymede-nginx-config
+        - name: db-data
+          persistentVolumeClaim:
+            claimName: ganymede-db-data-pvc

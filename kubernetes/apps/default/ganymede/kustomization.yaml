@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: ganymede
+
+commonLabels:
+  app: ganymede
+
+configMapGenerator:
+  - name: ganymede-api-config
+    files:
+      - api-config.yml
+  - name: ganymede-frontend-config
+    files:
+      - frontend-config.yml
+  - name: ganymede-db-config
+    files:
+      - db-config.yml
+bases:
+  - ./base

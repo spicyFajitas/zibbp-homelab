@@ -1,0 +1,5 @@
+API_URL: https://api.ganymede.lab.zibbp.net
+CDN_RL: https://cdn.ganymede.lab.zibbp.net
+SHOW_SSO_LOGIN_BUTTON: true
+FORCE_SSO_AUTH: false
+REQUIRE_LOGIN: false
