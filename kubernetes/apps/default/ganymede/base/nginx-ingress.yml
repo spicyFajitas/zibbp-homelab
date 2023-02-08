@@ -19,5 +19,5 @@ spec:
                   number: 8080
   tls:
     - hosts:
-        - cdn.ganymede.lab.zibbp.net
+        - ganymede.lab.zibbp.net
       secretName: lab-zibbp-net-tls
