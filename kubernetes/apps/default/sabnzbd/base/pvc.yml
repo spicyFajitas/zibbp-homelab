@@ -40,7 +40,7 @@ metadata:
   name: sabnzbd-downloads-pvc
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: local-path
   resources:
     requests:
