@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ganymede-api
+  labels:
+    app: ganymede
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ganymede-api
+  template:
+    metadata:
+      labels:
+        app: ganymede-api
+    spec:
+      containers:
+        - name: ganymede-api
+          image: ghcr.io/zibbp/ganymede:v1.2.3
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: ganymede-api-config
+            - secretRef:
+                name: ganymede-api-secret
+          ports:
+            - containerPort: 4000
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: logs
+              mountPath: /logs
+            - name: videos-nfs
+              mountPath: /vods
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: ganymede-data-pvc
+        - name: logs
+          persistentVolumeClaim:
+            claimName: ganymede-logs-pvc
+        - name: videos-nfs
+          persistentVolumeClaim:
+            claimName: ganymede-videos-nfs-pv
