@@ -10,3 +10,7 @@ resources:
   - ./database/service.yml
   - ./database/ingress.yml
   - ./database/sealed-secret.yml
+  - ./api/deployment.yml
+  - ./api/service.yml
+  - ./api/ingress.yml
+  - ./api/sealed-secret.yml
