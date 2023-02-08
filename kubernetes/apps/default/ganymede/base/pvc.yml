@@ -25,7 +25,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ganymede-db-data-pvc
+  name: ganymede-database-data-pvc
 spec:
   accessModes:
     - ReadWriteOnce

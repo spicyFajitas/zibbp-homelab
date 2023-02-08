@@ -14,6 +14,9 @@ configMapGenerator:
       - SHOW_SSO_LOGIN_BUTTON=true
       - FORCE_SSO_AUTH=false
       - REQUIRE_LOGIN=false
-
+  - name: ganymede-db-config
+    literals:
+      - POSTGRES_USER=ganymede
+      - POSTGRES_DB=ganymede-prd
 bases:
   - ./base

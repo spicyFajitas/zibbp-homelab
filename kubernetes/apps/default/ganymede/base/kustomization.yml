@@ -1,6 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - pv.yml
+  - pvc.yml
   - ./frontend/deployment.yml
   - ./frontend/service.yml
   - ./frontend/ingress.yml
+  - ./database/deployment.yml
+  - ./database/service.yml
+  - ./database/ingress.yml
+  - ./database/sealed-secret.yml
