@@ -8,8 +8,14 @@ commonLabels:
 
 configMapGenerator:
   - name: ganymede-api-config
-    files:
-      - api-config.yml
+    literals:
+      - TZ=America/Chicago
+      - DB_HOST=ganymede-db
+      - DB_PORT=5432
+      - DB_USER=ganymede
+      - DB_NAME=ganymede-prd
+      - DB_SSL=disable
+      - FRONTEND_HOST=https://ganymede.lab.zibbp.net
   - name: ganymede-frontend-config
     files:
       - frontend-config.yml
