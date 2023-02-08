@@ -4,7 +4,8 @@ metadata:
   name: ganymede-api-service
 spec:
   selector:
-    app: ganymede-api
+    matchFields:
+      - metadata.name: ganymede-api-deployment
   ports:
     - name: ganymede-api-http
       port: 4000

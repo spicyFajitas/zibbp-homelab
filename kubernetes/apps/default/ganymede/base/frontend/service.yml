@@ -4,7 +4,8 @@ metadata:
   name: ganymede-frontend-service
 spec:
   selector:
-    app: ganymede-frontend
+    matchFields:
+      - metadata.name: ganymede-frontend-deployment
   ports:
     - name: ganymede-frontend-http
       port: 3000

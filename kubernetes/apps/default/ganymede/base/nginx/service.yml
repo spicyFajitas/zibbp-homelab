@@ -4,7 +4,8 @@ metadata:
   name: ganymede-nginx-service
 spec:
   selector:
-    app: ganymede-nginx
+    matchFields:
+      - metadata.name: ganymede-nginx-deployment
   ports:
     - name: ganymede-nginx-http
       port: 8080

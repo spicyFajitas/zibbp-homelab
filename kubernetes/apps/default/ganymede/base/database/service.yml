@@ -4,7 +4,8 @@ metadata:
   name: ganymede-database-service
 spec:
   selector:
-    app: ganymede-database
+    matchFields:
+      - metadata.name: ganymede-database-deployment
   ports:
     - name: ganymede-database-tcp
       port: 5432
