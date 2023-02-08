@@ -5,7 +5,10 @@ resources:
   - db-deployment.yml
   - frontend-deployment.yml
   - nginx-deployment.yml
-  - service.yml
+  - api-service.yml
+  - db-service.yml
+  - frontend-service.yml
+  - nginx-service.yml
   - frontend-ingress.yml
   - api-ingress.yml
   - db-ingress.yml

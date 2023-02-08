@@ -14,7 +14,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ganymede
+                name: ganymede-api
                 port:
                   number: 4000
   tls:
