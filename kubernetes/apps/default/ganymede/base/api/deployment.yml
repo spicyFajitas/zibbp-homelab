@@ -25,7 +25,7 @@ spec:
                 name: ganymede-api-secret
           ports:
             - containerPort: 4000
-           volumeMounts:
+          volumeMounts:
             - name: data
               mountPath: /data
             - name: logs
