@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ganymede-lab-zibbp-net
+  namespace: default
+spec:
+  secretName: ganymede-lab-zibbp-net-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "*.ganymede.lab.zibbp.net"
+  dnsNames:
+    - "ganymede.lab.zibbp.net"
+    - "*.ganymede.lab.zibbp.net"
