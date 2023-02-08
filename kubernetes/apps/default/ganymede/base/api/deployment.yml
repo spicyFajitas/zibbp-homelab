@@ -3,16 +3,19 @@ kind: Deployment
 metadata:
   name: ganymede-api-deployment
   labels:
+    app: ganymede-api
     deployment: ganymede-api
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: ganymede-api
+      deployment: ganymede-api
   template:
     metadata:
       labels:
         app: ganymede-api
+        deployment: ganymede-api
     spec:
       containers:
         - name: ganymede-api
