@@ -27,5 +27,6 @@ configMapGenerator:
       - DB_NAME=ganymede-prd
       - DB_SSL=disable
       - FRONTEND_HOST=https://ganymede.lab.zibbp.net
+      - COOKIE_DOMAIN=ganymede.lab.zibbp.net
 bases:
   - ./base

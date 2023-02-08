@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ganymede-nginx
+  labels:
+    app: ganymede-nginx
+spec:
+  selector:
+    app: ganymede-nginx
+  ports:
+    - name: ganymede-nginx
+      port: 8080
+      targetPort: 8080
+      protocol: TCP

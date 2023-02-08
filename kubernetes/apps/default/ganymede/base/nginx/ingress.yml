@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ganymede-nginx-ingress
+  labels:
+    app: ganymede-nginx-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: cdn.ganymede.lab.zibbp.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ganymede-nginx
+                port:
+                  number: 3000
+  tls:
+    - hosts:
+        - cdn.ganymede.lab.zibbp.net
+      secretName: ganymede-lab-zibbp-net-tls

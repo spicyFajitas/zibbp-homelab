@@ -14,3 +14,7 @@ resources:
   - ./api/service.yml
   - ./api/ingress.yml
   - ./api/sealed-secret.yml
+  - ./nginx/deployment.yml
+  - ./nginx/service.yml
+  - ./nginx/ingress.yml
+  - ./nginx/configmap.yml
