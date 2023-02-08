@@ -14,7 +14,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ganymede-frontend
+                name: ganymede
                 port:
                   number: 3000
     - host: api-ganymede.lab.zibbp.net
@@ -24,7 +24,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ganymede-api
+                name: ganymede
                 port:
                   number: 4000
     - host: cdn-ganymede.lab.zibbp.net
@@ -34,7 +34,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ganymede-nginx
+                name: ganymede
                 port:
                   number: 8080
   tls:
