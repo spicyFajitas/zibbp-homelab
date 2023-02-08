@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ganymede-api-deployment
+  name: ganymede-api
   labels:
     app: ganymede-api
     deployment: ganymede-api
