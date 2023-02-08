@@ -17,10 +17,15 @@ configMapGenerator:
       - DB_SSL=disable
       - FRONTEND_HOST=https://ganymede.lab.zibbp.net
   - name: ganymede-frontend-config
-    files:
-      - frontend-config.yml
+    literals:
+      - API_URL=https://api.ganymede.lab.zibbp.net
+      - CDN_URL=https://cdn.ganymede.lab.zibbp.net
+      - SHOW_SSO_LOGIN_BUTTON=true
+      - FORCE_SSO_AUTH=false
+      - REQUIRE_LOGIN=false
   - name: ganymede-db-config
-    files:
-      - db-config.yml
+    literals:
+      - POSTGRES_USER=ganymede
+      - POSTGRES_DB=ganymede-prd
 bases:
   - ./base
