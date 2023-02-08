@@ -20,4 +20,4 @@ spec:
   tls:
     - hosts:
         - ganymede.lab.zibbp.net
-      secretName: lab-zibbp-net-tls
+      secretName: ganymede-lab-zibbp-net-tls
