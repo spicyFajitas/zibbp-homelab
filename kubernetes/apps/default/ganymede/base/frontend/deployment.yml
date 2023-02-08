@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ganymede-frontend
   labels:
-    app: ganymede
+    app: ganymede-frontend
 spec:
   replicas: 1
   selector:

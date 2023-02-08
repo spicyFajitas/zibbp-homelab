@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ganymede-database
   labels:
-    app: ganymede
+    app: ganymede-database
 spec:
   replicas: 1
   selector:
