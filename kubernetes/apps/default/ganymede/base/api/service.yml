@@ -4,6 +4,7 @@ metadata:
   name: ganymede-api-service
 spec:
   selector:
+    app: ganymede
     deployment: ganymede-api
   ports:
     - name: ganymede-api-http
