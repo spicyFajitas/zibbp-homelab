@@ -4,15 +4,18 @@ metadata:
   name: ganymede-database-deployment
   labels:
     app: ganymede-database
+    deployment: ganymede-database
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: ganymede-database
+      deployment: ganymede-database
   template:
     metadata:
       labels:
         app: ganymede-database
+        deployment: ganymede-database
     spec:
       containers:
         - name: ganymede-database
