@@ -19,10 +19,13 @@ spec:
           image: ghcr.io/zibbp/ganymede:v1.2.3
           imagePullPolicy: Always
           envFrom:
-            - configMapRef:
-                name: ganymede-api-config
+            # - configMapRef:
+            #     name: ganymede-api-config
             - secretRef:
                 name: ganymede-api-secret
+          env:
+            - name: DB_HOST
+              value: ganymede-db
           ports:
             - containerPort: 4000
           volumeMounts:
