@@ -20,7 +20,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-           volumeMounts:
+          volumeMounts:
             - name: nginx-config
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
