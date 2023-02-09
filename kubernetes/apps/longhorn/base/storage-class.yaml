@@ -10,5 +10,5 @@ parameters:
   numberOfReplicas: "1"
   staleReplicaTimeout: "30"
   fromBackup: ""
-  fsType: "xfs"
+  fsType: "ext4"
   dataLocality: "disabled"
