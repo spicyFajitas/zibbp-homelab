@@ -8,6 +8,10 @@ configMapGenerator:
     name: argocd-cmd-params-cm
     literals:
       - "server.insecure=true"
+  - behavior: merge
+    name: argocd-cm
+    data:
+      kustomize.buildOptions: --enable-helm
 
 namespace: argocd
 
