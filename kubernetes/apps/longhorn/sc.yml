@@ -4,11 +4,11 @@ metadata:
   name: longhorn-tycho
 provisioner: driver.longhorn.io
 allowVolumeExpansion: true
-reclaimPolicy: "Delete"
+reclaimPolicy: Delete
 volumeBindingMode: Immediate
 parameters:
   numberOfReplicas: "1"
   staleReplicaTimeout: "30"
   fromBackup: ""
-  fsType: "ext4"
+  fsType: "xfs"
   dataLocality: "disabled"

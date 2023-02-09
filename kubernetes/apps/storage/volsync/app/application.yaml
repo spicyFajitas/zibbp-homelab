@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: volsync
   namespace: argocd
+  annotations:
+    helm.sh/hook: crd-install
 spec:
   project: default
   source:
