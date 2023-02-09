@@ -35,8 +35,6 @@ spec:
               mountPath: /logs
             - name: videos-nfs
               mountPath: /vods
-            - name: test-pvc
-              mountPath: /test
       volumes:
         - name: data
           persistentVolumeClaim:
@@ -47,6 +45,3 @@ spec:
         - name: videos-nfs
           persistentVolumeClaim:
             claimName: ganymede-videos-nfs-pv
-        - name: test-pvc
-          persistentVolumeClaim:
-            claimName: ganymede-test-pvc

@@ -28,6 +28,8 @@ spec:
               mountPath: /config
             - name: sabnzbd-downloads
               mountPath: /downloads
+            - name: test
+              mountPath: /test
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -35,3 +37,6 @@ spec:
         - name: sabnzbd-downloads
           persistentVolumeClaim:
             claimName: sabnzbd-downloads-pvc
+        - name: test
+          persistentVolumeClaim:
+            claimName: sab-test-pvc

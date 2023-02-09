@@ -45,15 +45,3 @@ spec:
   resources:
     requests:
       storage: 1Ti
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: ganymede-test-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: longhorn-tycho
-  resources:
-    requests:
-      storage: 5Gi
