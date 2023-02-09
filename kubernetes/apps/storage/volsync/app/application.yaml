@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: volsync
+  name: volsync-system
   namespace: argocd
   annotations:
     helm.sh/hook: crd-install
@@ -12,7 +12,8 @@ spec:
     repoURL: https://backube.github.io/helm-charts
     targetRevision: 0.5.0
     helm:
-      releaseName: volsync
+      releaseName: volsync-system
+      createNamespace: true
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: volsync
+    namespace: volsync-system
