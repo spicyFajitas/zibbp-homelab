@@ -21,15 +21,3 @@ spec:
   resources:
     requests:
       storage: 200Gi
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: sab-test-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: longhorn-tycho
-  resources:
-    requests:
-      storage: 5Gi
