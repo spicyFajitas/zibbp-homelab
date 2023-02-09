@@ -10,3 +10,4 @@ spec:
           command:
             - argocd-server
             - --insecure
+            - --enable-helm
