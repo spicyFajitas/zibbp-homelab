@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: ganymede-api
-          image: ghcr.io/zibbp/ganymede:main@sha256:b9f4ff507111eea8863b7b1e05da74b5414b0ba1f06fc1933e9a9089ee41285a
+          image: ghcr.io/zibbp/ganymede:main@sha256:f4080f5fbb84cb0bf56f2c4017b2839b668e21eb0075f43c7aa0ab38458a9e5d
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
